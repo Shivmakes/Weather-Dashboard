@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Poppins', sans-serif;
+}
+
+body{
+display: flex;
+align-items: center;
+justify-content: center;
+min-height: 100vh;
+background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9i7WxD0qLkPpMP4e029UKeQ5uhNhx6p6VHZ8UPmxxzQ&s');
+background-size: cover;
+width: 100%;
+}
+
+::selection{
+color: rgb(255, 255, 255);
+background: rgb(67, 175, 252);
+}
+
+.wrapper{
+width: 400px;
+background: rgb(255, 255, 255);
+border-radius: 7px;
+box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.05);
+}
+
+.wrapper header{
+display: flex;
+font-size: 21px;
+font-weight: 500;
+color: rgb(67, 175, 252);
+padding: 16px 15px;
+align-items:center;
+border-bottom: 1px solid rgb(204, 204, 204);
+}
+
+header i{
+font-size: 0em;
+cursor: pointer;
+margin-right: 8px;
+}
+
+.wrapper.active header i{
+margin-left: 5px;
+font-size: 30px;
+}
+
+.wrapper .input-part{
+margin: 20px 25px 30px;
+}
+
+/* .wrapper .input-part img{
+width: 50%;
+padding: 1rem;
+display: block;
+margin-left: auto;
+margin-right: auto;
+height: 350px
+} */
+.wrapper.active .input-part{
+display: none;
+}
+
+.input-part .info-txt{
+display: none;
+font-size: 17px;
+text-align: center;
+padding: 12px 10px;
+border-radius: 7px;
+margin-bottom: 15px;
+}
+
+.input-part .info-txt.error{
+color: rgb(114, 28, 36);
+display: block;
+background: rgb(248, 215, 218);
+border: 1px solid rgb(245, 199, 203);
+}
+
+.input-part .info-txt.pending{
+color: rgb(12, 84, 96);
+display: block;
+background: rgb(209, 236, 241);
+border: 1px solid rgb(190, 229, 235);
+}
+
+.input-part :where(input, button){
+width: 100%;
+height: 55px;
+border: none;
+outline: none;
+font-size: 18px;
+border-radius: 7px;
+}
+
+.input-part input{
+text-align: center;
+padding: 0 15px;
+border: 1px solid rgb(204, 204, 204);
+}
+
+.input-part input:is(:focus, :valid){
+border: 2px solid rgb(67, 175, 252);
+}
+
+.input-part input::placeholder{
+color: rgb(191, 191, 191);
+}
+
+.input-part .separator{
+height: 1px;
+width: 100%;
+margin: 25px 0;
+background: rgb(204, 204, 204);
+position: relative;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.separator::before{
+content: "or";
+color: rgb(179, 179, 179);
+font-size: 19px;
+padding: 0 15px;
+background: rgb(255, 255, 255);
+}
+
+.input-part button{
+color: rgb(255, 255, 255);
+cursor: pointer;
+background: rgb(67, 175, 252);
+transition: 0.3s ease;
+}
+
+.input-part button:hover{
+background: rgb(29, 159, 252);
+}
+
+.wrapper .weather-part{
+display: none;
+margin: 30px 0 0;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+}
+
+.wrapper.active .weather-part{
+display: flex;
+}
+
+.weather-part img{
+max-width: 125px;
+}
+
+.weather-part .temp{
+display: flex;
+font-weight: 500;
+font-size: 72px;
+}
+
+.weather-part .temp .numb{
+font-weight: 600;
+}
+
+.weather-part .temp .deg{
+font-size: 40px;
+display: block;
+margin: 10px 5px 0 0;
+}
+
+.weather-part .weather{
+font-size: 21px;
+text-align: center;
+margin: -5px 20px 15px;
+}
+
+.weather-part .location{
+display: flex;
+font-size: 19px;
+padding: 0 20px;
+text-align: center;
+margin-bottom: 30px;
+align-items: flex-start;
+}
+
+.location i{
+font-size: 22px;
+margin: 4px 5px 0 0;
+}
+
+.weather-part .bottom-details{
+display: flex;
+width: 100%;
+justify-content: space-between;
+border-top: 1px solid rgb(204, 204, 204);
+}
+
+.bottom-details .column{
+display: flex;
+width: 100%;
+padding: 15px 0;
+align-items: center;
+justify-content: center;
+}
+
+.column i{
+color: rgb(93, 187, 255);
+font-size: 40px;
+}
+
+.column.humidity{
+border-left: 1px solid rgb(204, 204, 204);
+}
+
+.column .details{
+margin-left: 3px;
+}
+
+.details .temp, .humidity span{
+font-size: 18px;
+font-weight: 500;
+margin-top: -3px;
+}
+
+.details .temp .deg{
+margin: 0;
+font-size: 17px;
+padding: 0 2px 0 1px;
+}
+
+.column .details p{
+font-size: 14px;
+margin-top: -6px;
+}
+
+.humidity i{
+font-size: 37px;
+}
